@@ -1,0 +1,13 @@
+{
+	"logindata":[
+		{
+			"emailAddress":"vovojoc317@dosonex.com",
+			"password":"Password@1"
+		},
+		
+		{
+			"emailAddress":"vovojoc317@dosonex.com123",
+			"password":"Password@1"
+		}
+	]
+}
