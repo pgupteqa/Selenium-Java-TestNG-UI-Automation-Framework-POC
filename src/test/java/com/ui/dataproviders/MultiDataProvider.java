@@ -20,8 +20,7 @@ public class MultiDataProvider {
 	
 	private TestData loadTestData(String filename) {
 		Gson gson = new Gson();
-		//File file = new File(System.getProperty("user.dir") + "\\testData\\"+filename);
-		File file = new File("./testData/"+filename);
+		File file = new File(System.getProperty("user.dir") + "//testData//"+filename);
 		FileReader fileReader=null;
 		try 
 		{
