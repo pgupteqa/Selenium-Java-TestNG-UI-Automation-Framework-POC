@@ -10,6 +10,7 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 
 import com.google.gson.Gson;
+import com.ui.pojo.InvalidUsers;
 import com.ui.pojo.Registration;
 import com.ui.pojo.TestData;
 import com.ui.pojo.User;
@@ -41,6 +42,16 @@ public class MultiDataProvider {
 		TestData data = loadTestData(PropertiesUtil.readPropertyData("loginTestDataJsonFileName"));
 		List<Object[]> result = new ArrayList<>();
 		for (User user : data.getLogindata()) {
+			result.add(new Object[]{user});
+		}
+		return result.iterator();
+	}
+	
+	@DataProvider(name = "invalidLoginDataProvider")
+	public Iterator<Object[]> inValidLoginDataProvider() {
+		TestData data = loadTestData(PropertiesUtil.readPropertyData("invalidLoginTestDataJsonFileName"));
+		List<Object[]> result = new ArrayList<>();
+		for (InvalidUsers user : data.getInvalidLogindata()) {
 			result.add(new Object[]{user});
 		}
 		return result.iterator();

@@ -15,20 +15,37 @@ public final class LoginPage extends BrowserUtility {
 	public static final By EMAIL_TEXT_LOCATOR = By.xpath("//input[@id='email']");
 	public static final By PASSWORD_TEXT_LOCATOR = By.xpath("//input[@id='passwd']");
 	public static final By SIGN_IN_BUTTON_LOCATOR = By.xpath("//button[@id='SubmitLogin']");
+	public static final By LOGIN_ERROR_MESSAGE_LOCATOR = By.xpath("//div[contains(@class,'alert-danger')]/ol/li");
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
 	
-	public MyAccountPage doLoginWith(String emailaddress, String password)
+	public MyAccountPage doLoginWith(String emailAddress, String password)
 	{
-		logger.info("enter the emailaddress as " +emailaddress+ " and password " +password+ " and click on sign in button");
-		enterText(EMAIL_TEXT_LOCATOR, emailaddress);
+		logger.info("enter the emailaddress as " +emailAddress+ " and password " +password+ " and click on sign in button");
+		enterText(EMAIL_TEXT_LOCATOR, emailAddress);
 		enterText(PASSWORD_TEXT_LOCATOR, password );
 		clickOn(SIGN_IN_BUTTON_LOCATOR);
 		MyAccountPage myAccountPage = new MyAccountPage(getDriver());
 		return myAccountPage;
+	}
+	
+	public LoginPage doLoginWithInvalidCredentials(String emailAddress, String password)
+	{
+		logger.info("enter the emailaddress as " +emailAddress+ " and password " +password+ " and click on sign in button");
+		enterText(EMAIL_TEXT_LOCATOR, emailAddress);
+		enterText(PASSWORD_TEXT_LOCATOR, password );
+		clickOn(SIGN_IN_BUTTON_LOCATOR);
+		LoginPage loginPage = new LoginPage(getDriver());
+		return loginPage;
+	}
+	
+	public String getErrorMessage()
+	{
+		return getVisibleText(LOGIN_ERROR_MESSAGE_LOCATOR);
+		
 	}
 	
 	

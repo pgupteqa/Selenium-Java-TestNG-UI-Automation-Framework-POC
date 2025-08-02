@@ -9,6 +9,17 @@ public class TestData {
 	
 	//dataset for registration.json
 	List<Registration> registrationdata;
+	
+	//dataset for InvalidLogin.json
+	List<InvalidUsers> invalidlogindata;
+
+	public List<InvalidUsers> getInvalidLogindata() {
+		return invalidlogindata;
+	}
+
+	public void setInvalidLogindata(List<InvalidUsers> invalidLogindata) {
+		this.invalidlogindata = invalidLogindata;
+	}
 
 	public List<Registration> getRegistrationdata() {
 		return registrationdata;
