@@ -15,6 +15,7 @@ import com.ui.pojo.TestData;
 import com.ui.pojo.User;
 import com.utility.CSVReaderUtility;
 import com.utility.ExcelReaderUtility;
+import com.utility.PropertiesUtil;
 
 public class MultiDataProvider {
 	
@@ -37,7 +38,7 @@ public class MultiDataProvider {
 	
 	@DataProvider(name = "LoginDataProvider")
 	public Iterator<Object[]> loginDataProvider() {
-		TestData data = loadTestData("logintestdata.json");
+		TestData data = loadTestData(PropertiesUtil.readPropertyData("loginTestDataJsonFileName"));
 		List<Object[]> result = new ArrayList<>();
 		for (User user : data.getLogindata()) {
 			result.add(new Object[]{user});
@@ -47,7 +48,7 @@ public class MultiDataProvider {
 	
 	@DataProvider(name = "registrationDataProvider")
 	public Iterator<Object[]> registrationDataProvider() {
-		TestData data = loadTestData("registrationtestdata.json");
+		TestData data = loadTestData(PropertiesUtil.readPropertyData("registrationTestDataJsonFileName"));
 		List<Object[]> result = new ArrayList<>();
 		for (Registration reg : data.getRegistrationdata()) {
 			result.add(new Object[]{reg});
@@ -58,13 +59,13 @@ public class MultiDataProvider {
 	@DataProvider(name="LoginTestCSVDataProvider")
 	public Iterator<User> loginCSVDataProvider()
 	{
-		return CSVReaderUtility.readCSVFile("loginData.csv");
+		return CSVReaderUtility.readCSVFile(PropertiesUtil.readPropertyData("loginTestDataCsvFileName"));
 	}
 	
 	@DataProvider(name="LoginTestExcelDataProvider")
 	public Iterator<User> loginExcelDataProvider()
 	{
-		return ExcelReaderUtility.readExcelData("loginData.xlsx");
+		return ExcelReaderUtility.readExcelData(PropertiesUtil.readPropertyData("loginTestDataExcelFileName"));
 	}
 
 }

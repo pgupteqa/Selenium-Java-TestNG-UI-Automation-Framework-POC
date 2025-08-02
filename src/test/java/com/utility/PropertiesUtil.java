@@ -33,5 +33,29 @@ public class PropertiesUtil {
 		return value;
 		
 	}
+	
+	public static String readPropertyData(String propertyName)
+	{
+		File propFile = new File(System.getProperty("user.dir") + "//config//TestDataFileName.properties");
+		FileReader fileReader = null;
+		Properties properties = new Properties();
+		try
+		{
+			fileReader = new FileReader(propFile);
+			properties.load(fileReader);
+		}
+		catch (FileNotFoundException e)
+		{
+			e.printStackTrace();
+		}
+		catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+		
+		String value = properties.getProperty(propertyName);
+		return value;
+		
+	}
 
 }

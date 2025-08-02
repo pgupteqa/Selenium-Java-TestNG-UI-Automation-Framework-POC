@@ -31,8 +31,8 @@ public class JSONUtility {
 	}
 	
 	public static Env getCurrentEnv() {
-	    String env = System.getProperty("env", "QA").toUpperCase(); // default to QA if not passed
-	    return Env.valueOf(env);
+	    String envname = System.getProperty("envname", "QA").toUpperCase(); // default to QA if not passed
+	    return Env.valueOf(envname);
 	}
 
 }
