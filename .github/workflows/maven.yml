@@ -23,6 +23,9 @@ jobs:
         cache: maven
     
     - name: Running Test Selenium UI Automation Framework with Maven
+      env:
+        LT_USERNAME: ${{ secrets.LT_USERNAME }}
+        LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
       run: mvn test -X -Dbrowsername=chrome -DisLambdaTest=true -DisHeadLess=false -Denvname=dev
 
     - name: Upload  Test logs
