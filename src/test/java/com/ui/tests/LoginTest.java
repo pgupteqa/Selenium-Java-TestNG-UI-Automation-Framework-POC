@@ -22,12 +22,13 @@ public class LoginTest extends TestBase {
 	Logger logger=LoggerUtility.getLogger(this.getClass());
 	
 	@Test(description="Verify the Login using valid user", groups= {"login","sanity","smoke"}, dataProviderClass=com.ui.dataproviders.MultiDataProvider.class, 
-			dataProvider="LoginDataProvider")
+			dataProvider="LoginDataProvider", retryAnalyzer = com.ui.listeners.RetryAnalyzer.class)
 	public void loginTest(User user) 
 	{	
-		
+		//loginAsValidUser("Prateek Guptey", user);
 		assertEquals(homepage.goToLoginPage().doLoginWith(user.getEmailAddress(), user.getPassword()).getUsername(),
 		"Prateek Guptey");
+		
 	}
 	
 	/*@Test(description="Verify the Login using valid user using CSV", groups= {"login","sanity","smoke"}, dataProviderClass=com.ui.dataproviders.MultiDataProvider.class, 
@@ -54,12 +55,6 @@ public class LoginTest extends TestBase {
 		
 		assertEquals(homepage.goToLoginPage().doLoginWith(reg.getRegisteredEmailAddress(),reg.getRegisteredPassword()).getUsername(),
 		"Prateek Guptey1");
-	}*/
-	
-	/*@AfterMethod(description="close the browser")
-	public void teardown() throws InterruptedException
-	{
-		homepage.closebrowser();
 	}*/
 
 }

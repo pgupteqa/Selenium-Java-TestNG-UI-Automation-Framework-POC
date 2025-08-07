@@ -47,6 +47,16 @@ public class MultiDataProvider {
 		return result.iterator();
 	}
 	
+	@DataProvider(name = "ValidLoginDataProvider")
+	public Iterator<Object[]> validLoginDataProvider() {
+		TestData data = loadTestData(PropertiesUtil.readPropertyData("loginTestDataJsonFileName"));
+		List<Object[]> result = new ArrayList<>();
+		for (User user : data.getValidlogindata()) {
+			result.add(new Object[]{user});
+		}
+		return result.iterator();
+	}
+	
 	@DataProvider(name = "invalidLoginDataProvider")
 	public Iterator<Object[]> inValidLoginDataProvider() {
 		TestData data = loadTestData(PropertiesUtil.readPropertyData("invalidLoginTestDataJsonFileName"));

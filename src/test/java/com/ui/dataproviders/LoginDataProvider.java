@@ -15,7 +15,7 @@ import com.ui.pojo.User;
 
 public class LoginDataProvider {
 	
-	@DataProvider(name="LoginDataProvider")
+	@DataProvider(name="LoginDataProvider1")
 	public Iterator<Object[]> loginDataProvider()
 	{
 		Gson gson = new Gson();

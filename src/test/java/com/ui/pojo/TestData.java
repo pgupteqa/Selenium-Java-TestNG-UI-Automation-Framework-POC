@@ -12,6 +12,17 @@ public class TestData {
 	
 	//dataset for InvalidLogin.json
 	List<InvalidUsers> invalidlogindata;
+	
+	//dataset for validlogin users
+	List<User> validlogindata;
+
+	public List<User> getValidlogindata() {
+		return validlogindata;
+	}
+
+	public void setValidlogindata(List<User> validlogindata) {
+		this.validlogindata = validlogindata;
+	}
 
 	public List<InvalidUsers> getInvalidLogindata() {
 		return invalidlogindata;

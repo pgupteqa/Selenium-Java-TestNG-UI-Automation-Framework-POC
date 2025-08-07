@@ -3,11 +3,15 @@
 		{
 			"emailAddress":"vovojoc317@dosonex.com",
 			"password":"Password@1"
-		},
-		
+		}
+	],
+	
+	"validlogindata":[
 		{
-			"emailAddress":"vovojoc317@dosonex.com123",
+			"emailAddress":"vovojoc317@dosonex.com",
 			"password":"Password@1"
 		}
 	]
+	
+	
 }

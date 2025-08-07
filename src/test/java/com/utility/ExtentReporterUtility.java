@@ -27,7 +27,7 @@ public class ExtentReporterUtility {
 	
 	public static ExtentTest getTest()
 	{
-		return extentTest.get();
+		return extentTest.get();	
 	}
 	
 	public static void flushReport()
