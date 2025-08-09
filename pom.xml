@@ -25,7 +25,7 @@
 				<version>3.5.3</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
+						<suiteXmlFile>${suitexml.file}</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
 						<browsername>${browsername}</browsername>
@@ -37,9 +37,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
-
-
 	</build>
+	
 	<dependencies>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->

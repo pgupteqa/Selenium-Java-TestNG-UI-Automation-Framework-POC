@@ -19,7 +19,7 @@ public class SearchProductTest extends TestBase{
 	private static final String PRODUCT_SEARCH_TERM = PropertiesUtil.readProperty(Env.DEV,"PRODUCTSEARCHTERM");
 	
 	
-	@Test(description="Verify if the logged in user is able to search for the correct product", groups= {"login","sanity","smoke"}, dataProviderClass=com.ui.dataproviders.MultiDataProvider.class, 
+	@Test(description="Verify if the logged in user is able to search for the correct product", groups= {"sanity","regression","smoke"}, dataProviderClass=com.ui.dataproviders.MultiDataProvider.class, 
 			dataProvider="ValidLoginDataProvider")
 	public void verifyProductSearch(User user)
 	{	
