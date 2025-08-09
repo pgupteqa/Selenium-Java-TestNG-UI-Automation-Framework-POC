@@ -26,7 +26,7 @@ jobs:
       env:
         LT_USERNAME: ${{ secrets.LT_USERNAME }}
         LT_ACCESS_KEY: ${{ secrets.LT_ACCESS_KEY }}
-      run: mvn test -X -Dbrowsername=chrome -DisLambdaTest=true -DisHeadLess=false -Denvname=dev
+      run: mvn test -X -Dbrowsername=chrome -DisLambdaTest=true -DisHeadLess=false -Denvname=dev -Dsuitexml.file=testsuites/RegressionTests.xml
 
     - name: Upload  Test logs
       if: always()
