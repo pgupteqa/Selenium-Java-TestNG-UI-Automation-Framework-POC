@@ -64,7 +64,7 @@ Before running this framework, ensure the following software is installed on you
   mvn test -Dbrowsername=chrome  -DisLambdaTest=false -DisHeadLess=false -Denvname=QA -Dsuitexml.file=testsuites/RegressionTests.xml
 
 ```
-**Running Tests on Local Machine in HeadLess Mode**
+**Running Tests on Local Machine in Headless Mode**
 
 ```bash
   mvn test -Dbrowsername=chrome -DisLambdaTest=false -DisHeadLess=true -Denvname=QA -Dsuitexml.file=testsuites/RegressionTests.xml
@@ -77,6 +77,17 @@ Before running this framework, ensure the following software is installed on you
 
 ```
 
+**Running Tests on LambdaTest or Headless using a specific group tags**
+
+```bash
+  mvn test -Dbrowsername=chrome -DisLambdaTest=true -DisHeadLess=false -Denvname=QA -Dsuitexml.file=testsuites/RegressionTests.xml -Dgroups=regression
+
+```
+
+```bash
+  mvn test -Dbrowsername=chrome -DisLambdaTest=false -DisHeadLess=true -Denvname=QA -Dsuitexml.file=testsuites/RegressionTests.xml -Dgroups=regression
+
+```
 
 
 
