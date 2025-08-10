@@ -12,7 +12,7 @@ public class InvalidLoginTest extends TestBase {
 	
 	@Test(description = "Verify the Login using valid user", groups = {"login","sanity","smoke","regression"}, 
 			dataProviderClass = com.ui.dataproviders.MultiDataProvider.class, dataProvider = "invalidLoginDataProvider")
-	public void loginTest(InvalidUsers invaliduser) {
+	public void inValidLoginTest(InvalidUsers invaliduser) {
 
 		assertEquals(homepage.goToLoginPage().doLoginWithInvalidCredentials(invaliduser.getEmailAddress(), invaliduser.getPassword())
 				.getErrorMessage(), "Authentication failed.");
